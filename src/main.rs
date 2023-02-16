@@ -11,6 +11,7 @@ fn main() {
     let server = HttpServer::new(|| {
         App::new()
             .route("/", web::get().to(get_index))
+            .route("/gcd", web::post().to(post_gcd))
     });
 
     println!("Serving on https://localhost:3000...");
